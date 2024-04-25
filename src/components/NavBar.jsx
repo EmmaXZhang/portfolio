@@ -28,6 +28,24 @@ const NavBar = () => {
     opened: { rotate: -45, backgroundColor: "rgb(255,255,255)" },
   };
 
+  const listVariants = {
+    closed: { x: "100vw" },
+    opened: {
+      x: 0,
+      transition: {
+        //parent transition happen first, then children
+        when: "beforeChildren",
+        // stagger children effect
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    closed: { x: -10, opacity: 0 },
+    opened: { x: 0, opacity: 1 },
+  };
+
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       {/* links */}
@@ -92,13 +110,19 @@ const NavBar = () => {
         </button>
         {/* menu */}
         {open && (
-          <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl">
+          <motion.div
+            variants={listVariants}
+            initial={"closed"}
+            animate={"opened"}
+            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
+          >
+            {/* parent initial and animate effect is liked to children, so no need to explicite set init and animate again */}
             {links.map((link) => (
-              <Link key={link.title} href={link.url}>
-                {link.title}
-              </Link>
+              <motion.div variants={listItemVariants} key={link.title}>
+                <Link href={link.url}>{link.title}</Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
