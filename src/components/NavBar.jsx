@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const links = [
   { url: "/", title: "Home" },
@@ -14,16 +15,15 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
-      <div className="hidden md:flex gap-4">
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+      {/* links */}
+      <div className="hidden md:flex gap-4 w-1/3">
         {links.map((link) => (
-          <Link href={link.url} key={link.title}>
-            {link.title}
-          </Link>
+          <NavLink link={link} key={link.title} />
         ))}
       </div>
-      {/* log */}
-      <div className="md:hidden">
+      {/* logo */}
+      <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
@@ -34,10 +34,22 @@ const NavBar = () => {
           </span>
         </Link>
       </div>
-
-      <div>
+      {/* social media links */}
+      <div className="hidden md:flex gap-4 w-1/3">
         <Link href="https://github.com/EmmaXZhang">
           <Image src="/github.png" alt="" width={23} height={24} />
+        </Link>
+
+        <Link href="https://github.com/EmmaXZhang">
+          <Image src="/dribbble.png" alt="" width={23} height={24} />
+        </Link>
+
+        <Link href="https://github.com/EmmaXZhang">
+          <Image src="/instagram.png" alt="" width={23} height={24} />
+        </Link>
+
+        <Link href="https://github.com/EmmaXZhang">
+          <Image src="/linkedin.png" alt="" width={23} height={24} />
         </Link>
       </div>
 
