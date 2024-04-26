@@ -11,7 +11,7 @@ const TransitionProvider = ({ children }) => {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-screen bg-gradient-to-b from-blue-50 to-red-100"
+        className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-200"
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
@@ -24,7 +24,7 @@ const TransitionProvider = ({ children }) => {
 
         <motion.div
           className="fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-8xl cursor-default z-50 w-fit h-fit"
-          // display text of url
+          // display text of
           //animates its height from 0% to 100% of the viewport height when rendered, and from 100% to 0% when removed
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
