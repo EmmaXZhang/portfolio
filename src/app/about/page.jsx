@@ -13,31 +13,15 @@ const AboutPage = () => {
       {/* container */}
       <div className="h-full">
         {/* text container*/}
-        <div className="sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2">
+        <div className="sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-24 xl:gap-24 lg:pr-0 ">
           {/* skill container */}
           <div className="flex flex-col gap-12 justify-center">
             {/* skill title */}
             <h1 className="font-bold text-2xl">SKILLS</h1>
             {/* skill list */}
-
             <Skills />
 
             {/* scroll svg */}
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              width={50}
-              height={50}
-            >
-              <path
-                d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.94"
-                stroke="black"
-                strokeWidth="1"
-              ></path>
-              <path d="M12 6V14" stroke="black" strokeWidth="1"></path>
-              <path d="M15 11L12 14L9 11" stroke="black" strokeWidth="1"></path>
-            </svg>
           </div>
           {/* experience */}
           <div className="flex flex-col justify-center pb-48">
@@ -146,8 +130,6 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        {/* svg */}
-        <div className="hidden lg:block w-1/3 xl:1/2">svg</div>
       </div>
     </motion.div>
   );
