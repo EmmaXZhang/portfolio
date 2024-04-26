@@ -1,20 +1,6 @@
 "use client";
+import Skills from "@/components/Skills";
 import { motion } from "framer-motion";
-
-const skills = [
-  "JavaScript",
-  "React",
-  "Python",
-  "C#",
-  "Express.js",
-  "Node.js",
-  "MongoDB",
-  "SQL",
-  "Django",
-  "Redux",
-  "Bootstrap",
-  "Tailwind",
-];
 
 const AboutPage = () => {
   return (
@@ -33,16 +19,8 @@ const AboutPage = () => {
             {/* skill title */}
             <h1 className="font-bold text-2xl">SKILLS</h1>
             {/* skill list */}
-            <div className="flex flex-wrap gap-4">
-              {skills.map((skill) => (
-                <div
-                  className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
-                  key={skill}
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
+
+            <Skills />
 
             {/* scroll svg */}
             <svg
