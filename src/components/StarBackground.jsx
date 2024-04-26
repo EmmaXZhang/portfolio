@@ -23,8 +23,8 @@ const StarBackground = (props) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="$fff"
-          size={0.007}
+          color="white"
+          size={0.009}
           sizeAttenuation={true}
           dethWrite={false}
         />
