@@ -1,5 +1,5 @@
 .scrollable-div {
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 .scroll-container {
   height: 80vh;
