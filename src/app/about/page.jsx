@@ -2,13 +2,9 @@
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 // import { useScroll } from "@react-three/drei";
-import { motion, useInView, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
-  const containerRef = useRef();
-  const { scrollYProgress } = useScroll({ container: containerRef });
-
   return (
     <motion.div
       className="h-full overflow-scroll lg:flex"
@@ -31,11 +27,8 @@ const AboutPage = () => {
           </svg>
 
           {/* experience container */}
-          <div
-            ref={containerRef}
-            className="flex flex-col justify-center pb-48"
-          >
-            <Experience scrollYProgress={scrollYProgress} />
+          <div className="flex flex-col justify-center pb-48">
+            <Experience />
           </div>
         </div>
       </div>

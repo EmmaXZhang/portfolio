@@ -29,30 +29,14 @@ const Details = ({ position, company, time, workDetails }) => {
 };
 
 const Experience = () => {
-  // const ref = useRef(null);
-  // const { scrollY } = useScroll({
-  //   target: ref,
-  //   offset: ["start end", "center start"],
-  // });
-
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   console.log("x changed to", latest);
-  // });
-
   return (
     <div className="my-1 flex flex-col items-center justify-center relative overflow-hidden">
       <h2 className="font-bold text-2xl flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-20 py-10">
         EXPERIENCE
       </h2>
       <div className="w-[75%] mx-auto relative">
-        <motion.div
-          // style={{ scrollY: scrollYProgress }}
-          className="absolute left-9 top-0 w-[4px] h-full origin-top bg-black"
-        />
-        <ul
-          // ref={ref}
-          className="w-full flex flex-col items-start justify-between m-auto"
-        >
+        <motion.div className="absolute left-9 top-0 w-[4px] h-full origin-top bg-black" />
+        <ul className="w-full flex flex-col items-start justify-between m-auto">
           <Details
             position="Junior Software Engineer"
             company="General Assembly"
