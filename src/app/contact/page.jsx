@@ -45,8 +45,8 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col items-center g-10 lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* text container */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
-          <div>
+        <div className="lg:w-1/2 flex items-center justify-center text-6xl">
+          <div className="mb-8">
             {text.split("").map((letter, index) => (
               <motion.span
                 key={index}
@@ -65,43 +65,51 @@ const ContactPage = () => {
         </div>
 
         {/* form container */}
-        <form
-          onSubmit={sendEmail}
-          ref={form}
-          className="h-1/2 lg:full lg:w-1/2 bg-red-50 bg-opacity-40 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
-        >
-          <span>Hi Emma,</span>
-          <textarea
-            rows={6}
-            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
-            name="user_email"
-          />
-          <span> My mail address is:</span>
-          <input
-            name="user_name"
-            type="text"
-            className="bg-transparent border-b-2 border-b-black outline-none"
-          />
-          <span>Regards</span>
-          <input
-            name="user_name"
-            type="text"
-            className="bg-transparent border-b-2 border-b-black outline-none"
-          />
-          <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
-            Send
-          </button>
-          {sucess && (
-            <span className="text-green-600 font-semibold">
-              Your message has been sent successfully
-            </span>
-          )}
-          {error && (
-            <span className="text-red-600 font-semibold">
-              Something went wrong
-            </span>
-          )}
-        </form>
+        <div>
+          <form
+            onSubmit={sendEmail}
+            ref={form}
+            className="lg:h-full bg-red-50 bg-opacity-40 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+          >
+            <div>
+              <span>Hi Emma,</span>
+              <textarea
+                rows="6"
+                className="bg-transparent block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-black mt-5"
+                name="user_email"
+              />
+            </div>
+
+            <span> My mail address is:</span>
+            <input
+              name="user_name"
+              type="text"
+              className="bg-transparent border-b-2 border-b-black outline-none"
+            />
+
+            <span>Regards</span>
+            <input
+              name="user_name"
+              type="text"
+              className="bg-transparent border-b-2 border-b-black outline-none"
+            />
+
+            <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
+              Send
+            </button>
+
+            {sucess && (
+              <span className="text-green-600 font-semibold">
+                Your message has been sent successfully
+              </span>
+            )}
+            {error && (
+              <span className="text-red-600 font-semibold">
+                Something went wrong
+              </span>
+            )}
+          </form>
+        </div>
       </div>
     </motion.div>
   );

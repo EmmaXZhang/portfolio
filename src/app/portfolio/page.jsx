@@ -66,7 +66,7 @@ const PortfolioPage = () => {
             {items.map((item) => (
               <div
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
-                key={item._id}
+                key={item.id}
               >
                 <div className="flex flex-col gap-6 text-white items-center justify-center ">
                   <h1 className="font-bold mb-10 text-xl md:text-4xl lg:text-6xl xl:text=8xl">

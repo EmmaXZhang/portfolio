@@ -16,13 +16,13 @@ const Homepage = () => {
       transition={{ duration: 1 }}
     >
       <StarsCanvas />
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ">
         {/* image */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative">
+        <div className="h-1/2 lg:h-full lg:w-1/2 relative z-[-20]">
           <Image src="/hero.png" alt="" fill className="object-contain" />
         </div>
         {/* text */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
+        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center z-[20]">
           {/* title */}
           <div className="text-4xl md:text-6xl font-bold">
             {text.split("").map((letter, index) => (
