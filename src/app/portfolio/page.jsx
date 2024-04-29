@@ -60,6 +60,7 @@ const PortfolioPage = () => {
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
           My Works
         </div>
+
         <div className="sticky top-0 flex h-screen gap-4 items-center">
           <motion.div style={{ x }} className="flex">
             {items.map((item) => (
