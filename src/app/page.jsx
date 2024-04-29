@@ -43,10 +43,11 @@ const Homepage = () => {
 
           {/* description */}
           <p className="md:text-xl">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, ipsam quae laborum unde dolor reprehenderit. Mollitia,
-            iusto animi atque cupiditate voluptatibus doloremque debitis
-            obcaecati, cum, accusamus sed dolores ullam fuga.
+            A Full Stack Web Developer blending financial expertise with
+            technical prowess to deliver innovative software solutions.
+            Proficient in React, JavaScript, C#, Python, Node.js, Git and other
+            technologies. Recognized for excellent communication, teamwork, and
+            deadline management skills..
           </p>
           <div className="w-full flex gap-4">
             <Link
