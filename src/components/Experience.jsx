@@ -57,19 +57,19 @@ const Experience = () => {
             position="Junior Software Engineer"
             company="General Assembly"
             time="Feb 2024- May 2024"
-            workDetails="4 Full-Stack Projects"
+            workDetails="Participated in an intensive full-time program specializing in Full Stack Software Development, acquiring over 400 hours of hands-on training. Utilized a blend of user-cantered design methodologies and technical skills to execute various projects"
           />
           <Details
-            position="Junior Software Engineer"
+            position="Certificate IV in IT (Programming)"
             company="Tafe NSW"
             time="Feb 2024- May 2024"
-            workDetails="4 Full-Stack Projects"
+            workDetails="Mastered a comprehensive skill set through theoretical understanding and practical application. Learned introductory programming techniques and adeptly resolved client ICT issues. Contributed to cyber security risk management while adhering to IP, ethics, and privacy policies. Additionally, developed proficiency in building data-driven applications and basic mobile apps, ensuring readiness for diverse challenges in the digital landscape."
           />
           <Details
-            position="Junior Software Engineer"
-            company="General Assembly"
-            time="Feb 2024- May 2024"
-            workDetails="4 Full-Stack Projects"
+            position="Several Accoutant Positons"
+            company="NTT Australia Pty Ltd | Stamford Hotels and Resorts | OPPO Mobile Australia"
+            time="Apr 2016- Jun 2022"
+            workDetails="Excelled in monthly balance sheet reconciliations, ensuring accuracy within tight deadlines, and maintaining meticulous transaction records."
           />
         </ul>
       </div>
