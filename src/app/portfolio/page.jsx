@@ -123,7 +123,7 @@ const PortfolioPage = () => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
   // [0,1]->y, [0,1]->x
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-79%"]);
 
   return (
     <div style={{ height: "100vh" }}>
@@ -143,13 +143,13 @@ const PortfolioPage = () => {
       >
         <div className="h-[600vh]" ref={ref}>
           <div className="h-[calc(100vh-6rem)] items-center justify-center">
-            <div className="h-1/2 text-3xl flex justify-center items-center w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
+            <div className="h-2/3 text-4xl text-white flex justify-center items-center w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
               My Works
             </div>
 
             {/* CAROUSAL */}
             <motion.div
-              className="h-1/2 absolute left-0 flex gap-8"
+              className="h-1/3 absolute left-0 flex gap-8"
               ref={carouselRef}
               style={{ x: xTranslation }}
             >
@@ -159,6 +159,7 @@ const PortfolioPage = () => {
             </motion.div>
           </div>
 
+          {/* portfolio container */}
           <div className="sticky top-0 flex h-screen gap-4 items-center">
             <motion.div style={{ x }} className="flex">
               <div
@@ -170,12 +171,12 @@ const PortfolioPage = () => {
                   key={item.id}
                 >
                   {/* text container */}
-                  <div className="flex flex-col gap-4 text-white justify-start l:h-[500px] xl:h-[500px] xxl:h-[500px]">
-                    <h1 className="text-base font-bold mb-2 md:text-2xl lg:text-3xl xl:text-3xl">
+                  <div className="flex flex-col gap-4 text-white justify-start l:h-[600px] xl:h-[600px] xxl:h-[600px]">
+                    <h1 className="text-base font-bold mb-2 md:text-xl lg:text-4xl xl:text-4xl">
                       {item.title}
                     </h1>
 
-                    <p className="text-sm w-[160px] md:w-[260px] lg:w-[300px] lg:text-lg xl:w-[400px]">
+                    <p className="text-sm w-[160px] md:w-[260px] lg:w-[300px] xl:w-[400px] lg:text-3xl md:text-xl">
                       {item.description}
                     </p>
                     <Link href={item.link} className="flex justify-start">
@@ -185,7 +186,7 @@ const PortfolioPage = () => {
                     </Link>
                   </div>
                   {/* images */}
-                  <div className="ml-10 relative w-[190px] h-[240px] md:w-[280px] md:h-[350px] lg:w-[350px] l:h-[500px] xl:w-[380px] xl:h-[500px] xxl:w-[380px] xxl:h-[500px]">
+                  <div className="ml-10 relative w-[300px] h-[440px] md:w-[400px] md:h-[550px] lg:w-[480px] l:h-[600px] xl:w-[580px] xl:h-[750px] xxl:w-[480px] xxl:h-[600px]">
                     <Image src={item.img} alt="" fill />
                   </div>
                 </div>

@@ -10,7 +10,7 @@ const Card = ({ image, url }) => {
 
   return (
     <motion.div
-      className="relative overflow-hidden h-[200px] min-w-[200px] bg-slate-400 rounded-xl flex justify-center items-center"
+      className="relative overflow-hidden h-[300px] min-w-[300px] bg-slate-400 rounded-xl flex justify-center items-center"
       onHoverStart={() => setShowOverlay(true)}
       onHoverEnd={() => setShowOverlay(false)}
     >
@@ -29,7 +29,7 @@ const Card = ({ image, url }) => {
                 animate={{ y: 0 }}
                 exit={{ y: 10 }}
               >
-                <Link href={url} className="z-30">
+                <Link href={url} target="_blank" className="z-30">
                   Explore
                 </Link>
               </motion.h1>
