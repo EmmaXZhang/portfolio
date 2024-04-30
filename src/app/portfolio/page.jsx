@@ -1,6 +1,6 @@
 "use client";
 import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Card from "@/components/Card";
@@ -48,45 +48,77 @@ const items = [
 ];
 
 const images = [
-  "/portfolioCarousel/P-1.png",
-  "/portfolioCarousel/P-2.png",
-  "/portfolioCarousel/P-3.png",
-  "/portfolioCarousel/P-5.png",
-  "/portfolioCarousel/P-6.png",
-  "/portfolioCarousel/P-7.png",
-  "/portfolioCarousel/P-8.png",
-  "/portfolioCarousel/P-9.png",
-  "/portfolioCarousel/P-12.png",
-  "/portfolioCarousel/P-13.png",
-  "/portfolioCarousel/MG-1.png",
-  "/portfolioCarousel/MG-2.png",
-  "/portfolioCarousel/MG-3.png",
-  "/portfolioCarousel/MG-4.png",
-  "/portfolioCarousel/HU-1.png",
-  "/portfolioCarousel/HU-2.png",
-  "/portfolioCarousel/HU-3.png",
-  "/portfolioCarousel/HU-4.png",
-  "/portfolioCarousel/HU-5.png",
-  "/portfolioCarousel/HU-6.png",
+  { img: "/portfolioCarousel/P-1.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-2.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-3.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-5.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-6.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-7.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-8.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-9.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-12.png", url: "https://paws-t05n.onrender.com" },
+  { img: "/portfolioCarousel/P-13.png", url: "https://paws-t05n.onrender.com" },
+  {
+    img: "/portfolioCarousel/MG-1.png",
+    url: "https://emmaxzhang.github.io/MemoryGame/",
+  },
+  {
+    img: "/portfolioCarousel/MG-2.png",
+    url: "https://emmaxzhang.github.io/MemoryGame/",
+  },
+  {
+    img: "/portfolioCarousel/MG-3.png",
+    url: "https://emmaxzhang.github.io/MemoryGame/",
+  },
+  {
+    img: "/portfolioCarousel/MG-4.png",
+    url: "https://emmaxzhang.github.io/MemoryGame/",
+  },
+  { img: "/portfolioCarousel/HU-1.png", url: "https://hike-u.onrender.com" },
+  { img: "/portfolioCarousel/HU-2.png", url: "https://hike-u.onrender.com" },
+  { img: "/portfolioCarousel/HU-3.png", url: "https://hike-u.onrender.com" },
+  { img: "/portfolioCarousel/HU-4.png", url: "https://hike-u.onrender.com" },
+  { img: "/portfolioCarousel/HU-5.png", url: "https://hike-u.onrender.com" },
+  { img: "/portfolioCarousel/HU-6.png", url: "https://hike-u.onrender.com" },
 ];
 
 const PortfolioPage = () => {
   let [carouselRef, { width }] = useMeasure();
   const xTranslation = useMotionValue(0);
 
+  const [mustFinish, setMustFinish] = useState(false);
+  const [rerender, setRerender] = useState(false);
+
+  const FAST_DURATION = 55;
+  const SLOW_DURATION = 105;
+
+  const [duration, setDuration] = useState(FAST_DURATION);
+
   useEffect(() => {
     let controls;
     let finalPosition = -width / 2 - 8;
-    controls = animate(xTranslation, [0, finalPosition], {
-      ease: "linear",
-      duration: 50,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0,
-    });
 
-    return controls.stop;
-  }, [xTranslation, width]);
+    if (mustFinish) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+        ease: "linear",
+        duration: duration * (1 - xTranslation.get() / finalPosition),
+        onComplete: () => {
+          setMustFinish(false);
+          setRerender(!rerender);
+        },
+      });
+    } else {
+      controls = animate(xTranslation, [0, finalPosition], {
+        ease: "linear",
+        duration: duration,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+      });
+    }
+
+    return controls?.stop;
+  }, [xTranslation, width, duration, rerender]);
 
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
@@ -100,21 +132,29 @@ const PortfolioPage = () => {
         initial={{ y: "-200vh" }}
         animate={{ y: "0%" }}
         transition={{ duration: 1 }}
+        onHoverStart={() => {
+          setMustFinish(true);
+          setDuration(SLOW_DURATION);
+        }}
+        onHoverEnd={() => {
+          setMustFinish(true);
+          setDuration(FAST_DURATION);
+        }}
       >
         <div className="h-[600vh]" ref={ref}>
-          <div className="h-[calc(100vh-6rem)] flex flex-col items-center justify-center">
-            <div className="text-3xl w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
+          <div className="h-[calc(100vh-6rem)] items-center justify-center">
+            <div className="h-1/2 text-3xl flex justify-center items-center w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
               My Works
             </div>
 
             {/* CAROUSAL */}
             <motion.div
-              className="absolute left-0 flex gap-8"
+              className="h-1/2 absolute left-0 flex gap-8"
               ref={carouselRef}
               style={{ x: xTranslation }}
             >
               {[...images, ...images].map((item, idx) => (
-                <Card image={item} key={idx} />
+                <Card image={item.img} key={idx} url={item.url} />
               ))}
             </motion.div>
           </div>

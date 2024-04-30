@@ -3,8 +3,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
-const Card = ({ image }) => {
+const Card = ({ image, url }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
@@ -21,14 +22,16 @@ const Card = ({ image }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="absolute bg-black pointer-events-none opacity-50 h-full w-full ">
+            <div className="bg-black opacity-50 h-full w-full flex justify-center items-center">
               <motion.h1
-                className="bg-white font-semibold text-sm z-10 px-2 py-2 rounded-full flex items-center ga-[0.5ch] hover:opacity-70"
+                className="bg-white font-semibold text-sm z-10 px-2 py-2 rounded-full flex justify-center items-center ga-[0.5ch] hover:opacity-70"
                 initial={{ y: 10 }}
                 animate={{ y: 0 }}
                 exit={{ y: 10 }}
               >
-                <span>Explore</span>
+                <Link href={url} className="z-30">
+                  Explore
+                </Link>
               </motion.h1>
             </div>
           </motion.div>
