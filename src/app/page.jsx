@@ -46,8 +46,7 @@ const Homepage = () => {
             A Full Stack Web Developer blending financial expertise with
             technical prowess to deliver innovative software solutions.
             Proficient in React, JavaScript, C#, Python, Node.js, Git and other
-            technologies. Recognized for excellent communication, teamwork, and
-            deadline management skills..
+            technologies.
           </p>
           <div className="w-full flex gap-4">
             <Link

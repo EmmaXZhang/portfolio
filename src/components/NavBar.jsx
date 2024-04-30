@@ -73,14 +73,10 @@ const NavBar = () => {
         </Link>
 
         <Link href="https://github.com/EmmaXZhang">
-          <Image src="/dribbble.png" alt="" width={23} height={24} />
-        </Link>
-
-        <Link href="https://github.com/EmmaXZhang">
           <Image src="/instagram.png" alt="" width={23} height={24} />
         </Link>
 
-        <Link href="https://github.com/EmmaXZhang">
+        <Link href="au.linkedin.com/in/emmazxd">
           <Image src="/linkedin.png" alt="" width={23} height={24} />
         </Link>
       </div>

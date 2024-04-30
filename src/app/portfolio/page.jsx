@@ -13,11 +13,11 @@ const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
-    title: "Three Levels Memory Game",
+    title: "Paws",
     description:
-      "Designed and implemented a three-level card memory game using HTML, CSS, and JavaScript, showcasing creativity and problem-solving abilities.",
-    img: "/memory-game.jpeg",
-    link: "https://emmaxzhang.github.io/MemoryGame/",
+      "The “Paws” E-Commerce Store demonstrates my strong proficiency in full-stack development, showcasing skills in frontend development with React and Redux,React Bootstrap, backend development with Node.js and Express, database management with MongoDB.",
+    img: "/paws.jpeg",
+    link: "https://paws-t05n.onrender.com",
   },
   {
     id: 2,
@@ -40,11 +40,12 @@ const items = [
   {
     id: 4,
     color: "from-purple-300 to-red-300",
-    title: "Paws",
+
+    title: "Three Levels Memory Game",
     description:
-      "The “Paws” E-Commerce Store demonstrates my strong proficiency in full-stack development, showcasing skills in frontend development with React, global state management with Redux, backend development with Node.js and Express, database management with MongoDB and images cloud management with Cloudinary, React Bootstrap.",
-    img: "/paws.jpeg",
-    link: "https://paws-t05n.onrender.com",
+      "Designed and implemented a three-level card memory game using HTML, CSS, and JavaScript, showcasing creativity and problem-solving abilities.",
+    img: "/memory-game.jpeg",
+    link: "https://emmaxzhang.github.io/MemoryGame/",
   },
 ];
 
@@ -82,11 +83,11 @@ const PortfolioPage = () => {
                   className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-6 text-white items-center justify-center ">
-                    <h1 className="font-bold mb-10 text-xl md:text-4xl lg:text-6xl xl:text=8xl">
+                  <div className="flex flex-col gap-4 text-white items-center justify-center ">
+                    <h1 className="font-bold mb-8 text-xl md:text-3xl lg:text-5xl xl:text-5xl">
                       {item.title}
                     </h1>
-                    <div className="relative w-80 h-56 md:w-96 md:h-[504px] lg:w-[500px] l:h-[650px] xl:w-[600px] xl:h-[700px]">
+                    <div className="card-wrapper relative w-[60px] h-[36px] md:w-[200px] md:h-[304px] lg:w-[300px] l:h-[480px] xl:w-[300px] xl:h-[480px] xxl:w-[300px] xxl:h-[480px]">
                       <Image src={item.img} alt="" fill />
                     </div>
                     <p className="w-80 md:96 lg:w-[500px] lg:text-lg xl:w-[600px]">

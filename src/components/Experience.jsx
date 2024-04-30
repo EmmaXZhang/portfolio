@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import "./Experience.css";
 import LiIcon from "./LiIcon";
 
 const Details = ({ position, company, time, workDetails }) => {
