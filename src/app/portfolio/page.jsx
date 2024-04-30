@@ -6,6 +6,7 @@ import Link from "next/link";
 import Card from "@/components/Card";
 import useMeasure from "react-use-measure";
 import { animate } from "framer-motion";
+import "./page.css";
 
 const items = [
   {
@@ -156,6 +157,20 @@ const PortfolioPage = () => {
               {[...images, ...images].map((item, idx) => (
                 <Card image={item.img} key={idx} url={item.url} />
               ))}
+            </motion.div>
+
+            {/* arrow */}
+            <motion.div
+              animate={{ y: [-20, 20, -20] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="absolute svg-container"
+            >
+              <Image
+                src="/arrow_down.svg"
+                width="120"
+                height="120"
+                alt="SVG Image"
+              />
             </motion.div>
           </div>
 
