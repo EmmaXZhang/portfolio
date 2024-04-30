@@ -41,7 +41,7 @@ const items = [
     id: 4,
     color: "from-purple-300 to-red-300",
 
-    title: "Three Levels Memory Game",
+    title: "3 Levels Memory Game",
     description:
       "Designed and implemented a three-level card memory game using HTML, CSS, and JavaScript, showcasing creativity and problem-solving abilities.",
     img: "/memory-game.jpeg",
@@ -83,21 +83,22 @@ const PortfolioPage = () => {
                   className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-4 text-white items-center justify-center ">
-                    <h1 className="font-bold mb-8 text-xl md:text-3xl lg:text-5xl xl:text-5xl">
+                  <div className="flex flex-col gap-4 text-white  justify-start ">
+                    <h1 className="font-bold mb-8 text-xl md:text-2xl lg:text-3xl xl:text-3xl">
                       {item.title}
                     </h1>
-                    <div className="card-wrapper relative w-[60px] h-[36px] md:w-[200px] md:h-[304px] lg:w-[300px] l:h-[480px] xl:w-[300px] xl:h-[480px] xxl:w-[300px] xxl:h-[480px]">
-                      <Image src={item.img} alt="" fill />
-                    </div>
-                    <p className="w-80 md:96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+
+                    <p className="w-50 md:96 lg:w-[300px] lg:text-lg xl:w-[400px]">
                       {item.description}
                     </p>
-                    <Link href={item.link} className="flex justify-end">
+                    <Link href={item.link} className="flex justify-start">
                       <button className="p-2 text-sm md:p-4 md:text-md lg:p-3 lg:text-lg text-gray-500 font-semibold m-4 rounded bg-white">
                         See Demo
                       </button>
                     </Link>
+                  </div>
+                  <div className="ml-10 relative w-[180px] h-[240px] md:w-[200px] md:h-[304px] lg:w-[350px] l:h-[500px] xl:w-[380px] xl:h-[500px] xxl:w-[380px] xxl:h-[500px]">
+                    <Image src={item.img} alt="" fill />
                   </div>
                 </div>
               ))}
