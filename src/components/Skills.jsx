@@ -2,6 +2,8 @@ import { Skill_data } from "../constants/skillData";
 import React from "react";
 import SkillDataProvider from "./SkillDataProvider";
 import SkillText from "./SkillText";
+import { motion } from "framer-motion";
+import { slideInFromTop } from "../utils/motions";
 
 const Skills = () => {
   return (
@@ -12,7 +14,14 @@ const Skills = () => {
     >
       <SkillText />
 
-      <h1 className="font-bold text-2xl mb-8 mt-10">SKILLS</h1>
+      <motion.h1
+        className="font-bold text-2xl mb-8 mt-10"
+        initial="hidden"
+        animate="visible"
+        variants={slideInFromTop()}
+      >
+        SKILLS
+      </motion.h1>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Skill_data.map((skill, index) => (
           <SkillDataProvider
