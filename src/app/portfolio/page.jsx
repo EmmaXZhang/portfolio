@@ -1,13 +1,11 @@
 "use client";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { useRef } from "react";
+import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Card from "@/components/Card";
+import useMeasure from "react-use-measure";
+import { animate } from "framer-motion";
 
 const items = [
   {
@@ -49,18 +47,51 @@ const items = [
   },
 ];
 
-// const images
+const images = [
+  "/portfolioCarousel/P-1.png",
+  "/portfolioCarousel/P-2.png",
+  "/portfolioCarousel/P-3.png",
+  "/portfolioCarousel/P-5.png",
+  "/portfolioCarousel/P-6.png",
+  "/portfolioCarousel/P-7.png",
+  "/portfolioCarousel/P-8.png",
+  "/portfolioCarousel/P-9.png",
+  "/portfolioCarousel/P-12.png",
+  "/portfolioCarousel/P-13.png",
+  "/portfolioCarousel/MG-1.png",
+  "/portfolioCarousel/MG-2.png",
+  "/portfolioCarousel/MG-3.png",
+  "/portfolioCarousel/MG-4.png",
+  "/portfolioCarousel/HU-1.png",
+  "/portfolioCarousel/HU-2.png",
+  "/portfolioCarousel/HU-3.png",
+  "/portfolioCarousel/HU-4.png",
+  "/portfolioCarousel/HU-5.png",
+  "/portfolioCarousel/HU-6.png",
+];
 
 const PortfolioPage = () => {
+  let [carouselRef, { width }] = useMeasure();
+  const xTranslation = useMotionValue(0);
+
+  useEffect(() => {
+    let controls;
+    let finalPosition = -width / 2 - 8;
+    controls = animate(xTranslation, [0, finalPosition], {
+      ease: "linear",
+      duration: 50,
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 0,
+    });
+
+    return controls.stop;
+  }, [xTranslation, width]);
+
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
   // [0,1]->y, [0,1]->x
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
-
-  console.log("scrollYProgress: ", scrollYProgress);
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", latest);
-  });
 
   return (
     <div style={{ height: "100vh" }}>
@@ -71,8 +102,21 @@ const PortfolioPage = () => {
         transition={{ duration: 1 }}
       >
         <div className="h-[600vh]" ref={ref}>
-          <div className="text-3xl w-screen h-[calc(100vh-6rem)] flex items-center justify-center sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
-            My Works
+          <div className="h-[calc(100vh-6rem)] flex flex-col items-center justify-center">
+            <div className="text-3xl w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
+              My Works
+            </div>
+
+            {/* CAROUSAL */}
+            <motion.div
+              className="absolute left-0 flex gap-8"
+              ref={carouselRef}
+              style={{ x: xTranslation }}
+            >
+              {[...images, ...images].map((item, idx) => (
+                <Card image={item} key={idx} />
+              ))}
+            </motion.div>
           </div>
 
           <div className="sticky top-0 flex h-screen gap-4 items-center">
