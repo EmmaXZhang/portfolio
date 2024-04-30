@@ -15,7 +15,7 @@ const items = [
     color: "from-red-300 to-blue-300",
     title: "Paws",
     description:
-      "The “Paws” E-Commerce Store demonstrates my strong proficiency in full-stack development, showcasing skills in frontend development with React and Redux,React Bootstrap, backend development with Node.js and Express, database management with MongoDB.",
+      "The “Paws” E-Commerce Store demonstrates my strong proficiency in full-stack development, showcasing skills in React and Redux,React Bootstrap, Node.js and Express.js, database management with MongoDB.",
     img: "/paws.jpeg",
     link: "https://paws-t05n.onrender.com",
   },
@@ -49,6 +49,8 @@ const items = [
   },
 ];
 
+// const images
+
 const PortfolioPage = () => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
@@ -69,7 +71,7 @@ const PortfolioPage = () => {
         transition={{ duration: 1 }}
       >
         <div className="h-[600vh]" ref={ref}>
-          <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
+          <div className="text-3xl w-screen h-[calc(100vh-6rem)] flex items-center justify-center sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
             My Works
           </div>
 
@@ -83,12 +85,13 @@ const PortfolioPage = () => {
                   className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-4 text-white  justify-start ">
-                    <h1 className="font-bold mb-8 text-xl md:text-2xl lg:text-3xl xl:text-3xl">
+                  {/* text container */}
+                  <div className="flex flex-col gap-4 text-white justify-start l:h-[500px] xl:h-[500px] xxl:h-[500px]">
+                    <h1 className="text-base font-bold mb-2 md:text-2xl lg:text-3xl xl:text-3xl">
                       {item.title}
                     </h1>
 
-                    <p className="w-50 md:96 lg:w-[300px] lg:text-lg xl:w-[400px]">
+                    <p className="text-sm w-[160px] md:w-[260px] lg:w-[300px] lg:text-lg xl:w-[400px]">
                       {item.description}
                     </p>
                     <Link href={item.link} className="flex justify-start">
@@ -97,7 +100,8 @@ const PortfolioPage = () => {
                       </button>
                     </Link>
                   </div>
-                  <div className="ml-10 relative w-[180px] h-[240px] md:w-[200px] md:h-[304px] lg:w-[350px] l:h-[500px] xl:w-[380px] xl:h-[500px] xxl:w-[380px] xxl:h-[500px]">
+                  {/* images */}
+                  <div className="ml-10 relative w-[190px] h-[240px] md:w-[280px] md:h-[350px] lg:w-[350px] l:h-[500px] xl:w-[380px] xl:h-[500px] xxl:w-[380px] xxl:h-[500px]">
                     <Image src={item.img} alt="" fill />
                   </div>
                 </div>
