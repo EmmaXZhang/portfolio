@@ -143,13 +143,13 @@ const PortfolioPage = () => {
       >
         <div className="h-[600vh]" ref={ref}>
           <div className="h-[calc(100vh-6rem)] items-center justify-center">
-            <div className="h-2/3 text-4xl text-white flex justify-center items-center w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
+            <div className="h-2/4 text-4xl text-white flex justify-center items-center w-screen sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl text-center">
               My Works
             </div>
 
             {/* CAROUSAL */}
             <motion.div
-              className="h-1/3 absolute left-0 flex gap-8"
+              className="h-1/4 absolute left-0 flex gap-8"
               ref={carouselRef}
               style={{ x: xTranslation }}
             >
