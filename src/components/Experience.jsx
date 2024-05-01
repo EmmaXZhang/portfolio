@@ -45,7 +45,7 @@ const Experience = () => {
           <Details
             position="Certificate IV in IT (Programming)"
             company="Tafe NSW"
-            time="Feb 2024- May 2024"
+            time="Nov 2022- Nov 2023"
             workDetails="Mastered a comprehensive skill set through theoretical understanding and practical application. Learned introductory programming techniques and adeptly resolved client ICT issues. Contributed to cyber security risk management while adhering to IP, ethics, and privacy policies. Additionally, developed proficiency in building data-driven applications and basic mobile apps, ensuring readiness for diverse challenges in the digital landscape."
           />
           <Details
