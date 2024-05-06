@@ -186,7 +186,7 @@ const PortfolioPage = () => {
                   key={item.id}
                 >
                   {/* text container */}
-                  <div className="flex flex-col gap-4 text-white justify-start l:h-[600px] xl:h-[600px] xxl:h-[600px]">
+                  <div className="flex flex-col gap-5 text-white justify-start l:h-[600px] xl:h-[600px] xxl:h-[600px]">
                     <h1 className="text-base font-bold mb-2 md:text-xl lg:text-4xl xl:text-4xl">
                       {item.title}
                     </h1>
