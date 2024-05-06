@@ -194,7 +194,11 @@ const PortfolioPage = () => {
                     <p className="text-sm w-[160px] md:w-[260px] lg:w-[300px] xl:w-[400px] lg:text-3xl md:text-xl">
                       {item.description}
                     </p>
-                    <Link href={item.link} className="flex justify-start">
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      className="flex justify-start"
+                    >
                       <button className="p-2 text-sm md:p-4 md:text-md lg:p-3 lg:text-lg text-gray-500 font-semibold m-4 rounded bg-white">
                         See Demo
                       </button>
