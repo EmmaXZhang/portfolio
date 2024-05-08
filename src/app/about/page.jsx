@@ -26,7 +26,7 @@ const AboutPage = () => {
           <motion.div
             animate={{ y: [-20, 20, -20] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="svg-container flex justify-center items-center"
+            className="svg-container-about flex justify-center items-center"
           >
             <Image
               src="/arrow_down.svg"
